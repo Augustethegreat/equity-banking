@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <CustomerFeedback>
+        <Firstname>svds</Firstname>
+        <Lastname>LEAONARD</Lastname>
+        <Email>this@gmail.com</Email>
+        <TelephoneNo>32453453</TelephoneNo>
+        <CustomerCountry>Argentina</CustomerCountry>
+        <FeedbackType>Plainte</FeedbackType>
+        <TypeOfService>Commande Carte</TypeOfService>
+        <Feeback>345353</Feeback>
+        <DateLogged>2025-03-29T17:11:28.403Z</DateLogged>
+    </CustomerFeedback>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <CustomerFeedback>
+        <Firstname>my name</Firstname>
+        <Lastname>Lionnel</Lastname>
+        <Email>test@gmail.com</Email>
+        <TelephoneNo>084734922479</TelephoneNo>
+        <CustomerCountry>Congo</CustomerCountry>
+        <FeedbackType>Requête</FeedbackType>
+        <TypeOfService>Réactivation de Compte</TypeOfService>
+        <Feeback>hhhllglgglghglhg</Feeback>
+        <DateLogged>2025-03-29T21:13:27.583Z</DateLogged>
+    </CustomerFeedback>

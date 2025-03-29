@@ -106,9 +106,9 @@ function Aide() {
       });
   
       if (response.ok) {
-        alert("Données enregistrées avec succès !");
+        console.log("Données enregistrées avec succès !");
       } else {
-        alert("Échec de l'enregistrement");
+        console.log("Échec de l'enregistrement");
       }
     } catch (error) {
       console.error("Erreur:", error);
