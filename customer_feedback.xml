@@ -22,3 +22,51 @@
         <Feeback>hhhllglgglghglhg</Feeback>
         <DateLogged>2025-03-29T21:13:27.583Z</DateLogged>
     </CustomerFeedback>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <CustomerFeedback>
+        <Firstname>my name</Firstname>
+        <Lastname>LEAONARD</Lastname>
+        <Email>test@gmail.com</Email>
+        <TelephoneNo>084734922479</TelephoneNo>
+        <CustomerCountry>Australia</CustomerCountry>
+        <FeedbackType>Requête</FeedbackType>
+        <TypeOfService>Commande Carte</TypeOfService>
+        <Feeback>iirogoeioiriere</Feeback>
+        <DateLogged>2025-03-29T21:57:11.621Z</DateLogged>
+    </CustomerFeedback>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <CustomerFeedback>
+        <Firstname>my name</Firstname>
+        <Lastname>Stones</Lastname>
+        <Email>dbos@gmail.com</Email>
+        <TelephoneNo>084734922479</TelephoneNo>
+        <CustomerCountry>Andorra</CustomerCountry>
+        <FeedbackType>Compliment</FeedbackType>
+        <TypeOfService>Réactivation de Compte</TypeOfService>
+        <Feeback>dfgadgfadgfd</Feeback>
+        <DateLogged>2025-03-29T22:10:27.923Z</DateLogged>
+    </CustomerFeedback>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <CustomerFeedback>
+        <Firstname>my name</Firstname>
+        <Lastname>Lionnel</Lastname>
+        <Email>this@gmail.com</Email>
+        <TelephoneNo>084734922479</TelephoneNo>
+        <CustomerCountry>Belgium</CustomerCountry>
+        <FeedbackType>Requête</FeedbackType>
+        <TypeOfService>Réactivation de Compte</TypeOfService>
+        <Feeback>cVCvcvxxcvxCvxc</Feeback>
+        <DateLogged>2025-03-30T13:09:40.119Z</DateLogged>
+    </CustomerFeedback>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <CustomerFeedback>
+        <Firstname>fewef</Firstname>
+        <Lastname>wefwe</Lastname>
+        <Email>theemail@gmail.com</Email>
+        <TelephoneNo>3453234532</TelephoneNo>
+        <CustomerCountry>Barbados</CustomerCountry>
+        <FeedbackType>Requête</FeedbackType>
+        <TypeOfService>Réactivation de Compte</TypeOfService>
+        <Feeback>ttertweretewrtrew</Feeback>
+        <DateLogged>2025-03-30T13:18:21.191Z</DateLogged>
+    </CustomerFeedback>
