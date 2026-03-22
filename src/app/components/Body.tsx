@@ -89,7 +89,7 @@ function TheBody() {
               </span>
               <a href="https://www.equitybcdc-diasporabanking.com/equity-bank-ui/register">
               <div className='flex items-center mx-auto justify-center mt-0 py-2 px-10 md:px-10 lg:px-0 md:py-0 lg:py-0'>
-             <button className='bg-[#a22a2b] hover:bg-[#d73611] w-full rounded-[5px] lg:w-[190px] h-[40px] text-[11px] font-bold text-white '>CREER VOTRE COMPTE</button>
+             <button className='bg-[#a22a2b] hover:bg-[#d73611] w-full rounded-[5px] lg:w-[190px] h-[40px] text-[11px] font-bold text-white '>CREER VOTRE PROFIL</button>
                 </div> </a>
               </div>
               <div className='border-[1px] items-center mx-auto py-4 w-full px-0  lg:w-full mt-3 md:mt-3 lg:mt-0  bg-[#fff]'>
