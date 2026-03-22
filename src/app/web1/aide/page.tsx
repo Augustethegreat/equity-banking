@@ -215,6 +215,7 @@ function Aide() {
   const [popupMessage, setPopupMessage] = useState("Parfait !");
   const [popupSubMessage, setPopupSubMessage] = useState("Votre message a été envoyé avec succès !");
   const [showPopup, setShowPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawInput = e.target.value.replace(/\D/g, ""); // remove non-digits
@@ -230,6 +231,11 @@ function Aide() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    
+    if (isSubmitting) return; // prevent double submit
+
+    setIsSubmitting(true);
   
     if (formRef.current) {
       const formData = new FormData(formRef.current);
@@ -270,6 +276,8 @@ function Aide() {
       } catch (error) {
         setPopupMessage("Erreur réseau !");
         setPopupSubMessage("Veuillez vérifier votre connexion et réessayer.");
+      }finally {
+        setIsSubmitting(false); // allow re-submit
       }
   
       setShowPopup(true);
@@ -319,25 +327,30 @@ function Aide() {
             Déposez-nous un mot dans ce formulaire de contact et nous vous
             reviendrons sous peu.
           </p>
-      <form ref={formRef} onSubmit={handleSubmit} className="max-w-lg mx-auto p-4">
-        <label className="block mb-2 text-sm">Nom</label>
-        <Input name="Nom" required />
+      <form ref={formRef} onSubmit={handleSubmit}  className="w-full mt-4">
+        <div className="flex flex-col md:flex-row gap-x-4">
 
-        <label className="block mt-4 mb-2 text-sm">PostNom</label>
-        <Input name="PostNom" required />
+        <Input name="Nom"     placeholder="Nom" className="w-full px-4 py-2 text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px] mb-3 md:mb-0" required />
 
-        <label className="block mt-4 mb-2 text-sm">Courriel</label>
-        <Input name="Courriel" type="email" required />
+ 
+        <Input name="PostNom"    placeholder="Post-Nom"  className="w-full px-4 py-2 text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px]" required />
+        </div>
 
-        <label className="block mt-4 mb-2 text-sm">Téléphone</label>
-        <div className="flex items-center gap-2">
-          <Select value={countryCode} onValueChange={(value) => setCountryCode(value)}>
-            <SelectTrigger className="w-[120px]">
-              <SelectValue placeholder="Code" />
+
+        <div  className="flex flex-col md:flex-row gap-x-4 mt-2">
+        <Input name="Courriel" type="email" placeholder="Courriel"  className="w-full px-4 py-2 text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px] mb-3 md:mb-0" required />
+
+      
+        </div>
+        <div className="w-full flex px-0 py-0 lg:mt-2 sm:mt-0  text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px]"
+                  >
+          <Select value={countryCode} onValueChange={(value) => setCountryCode(value)} >
+            <SelectTrigger className="w-[160px] border-none border-0">
+              <SelectValue placeholder="Code" className="border-none border-0" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="border-none border-0 ">
               {countryCodes.map(({ code, country }) => (
-                <SelectItem key={code} value={code}>
+                <SelectItem key={code} value={code} className="border-none border-0">
                   {country} ({code})
                 </SelectItem>
               ))}
@@ -345,34 +358,81 @@ function Aide() {
           </Select>
           <Input
             placeholder="Numéro"
-            value={`${countryCode}${phoneNumber}`}
+            value={`${phoneNumber}`}
             onChange={handlePhoneNumberChange}
-            className="flex-1"
+            className="flex-1 border-none border-0"
             required
+            maxLength={10}
+            minLength={8}
           />
         </div>
+    
 
-        <label className="block mt-4 mb-2 text-sm">Demande</label>
-        <Input name="Demande" required />
+       
 
-        <label className="block mt-4 mb-2 text-sm">Opération</label>
-        <Input name="Operation" required />
+        
 
-        <label className="block mt-4 mb-2 text-sm">Commentaire</label>
-        <Input name="Commentaire" />
+        <div className="mt-2">
+                <select
+                  name="Demande"
+                  className="w-full px-4 py-2 text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px]"
+                  required
+                >
+                  <option value="" disabled hidden>
+                    Votre type de demande
+                  </option>
+                  <option value="Requête">Requête</option>
+                  <option value="Compliment">Compliment</option>
+                  <option value="Plainte">Plainte</option>
+                </select>
+              </div>
 
-        <button
-          type="submit"
-          className="mt-6 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-        >
-          Envoyer
-        </button>
+              <div className="mt-2">
+                <select
+                  name="Operation"
+                  className="w-full px-4 py-2 text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px]"
+                  required
+                >
+                  <option value="" disabled hidden>
+                    Votre type d’opération
+                  </option>
+                  <option value="Ouverture de compte">Ouverture de compte</option>
+                  <option value="Commande Carte">Commande Carte</option>
+                  <option value="Réactivation de Compte">
+                    Réactivation de Compte
+                  </option>
+                  <option value="Demande de prêt">Demande de prêt</option>
+                  <option value="Autres">Autres</option>
+                </select>
+              </div>
+        
+
+               {/* Comment Textarea */}
+               <div className="mt-3">
+                <textarea
+                  name="Commentaire"
+                  placeholder="Commentaire"
+                  className="w-full px-4 py-2 h-[100px] text-[#292929] border-[#a22a2b] hover:border-[#a22a2b] rounded-[5px] border-[2px]"
+                  required
+                ></textarea>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`bg-[#a22a2b] hover:bg-[#d73611] w-full mt-3 px-4 py-2 text-white font-semibold rounded-[5px] shadow-lg shadow-[#7c7a7a] ${
+                  isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              >
+                {isSubmitting ? "Envoi en cours..." : "Envoyer"}
+              </button>
       </form>
       </div>
         </div>
 
-       {/* Popup Modal */}
-       {showPopup && (
+        {/* Popup Modal */}
+        {showPopup && (
           <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="bg-[#a22a2b] text-white p-4 rounded-[20px] h-[25vh]">
               <p className="text-center text-xl">{popupMessage}</p>

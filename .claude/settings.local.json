@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls C:\\\\Users\\\\Test\\\\Downloads\\\\equity-site-vitrine-master \\(3\\)\\\\equity-site-vitrine-master\\\\public:*)"
+    ]
+  }
+}

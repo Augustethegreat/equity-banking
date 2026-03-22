@@ -79,20 +79,17 @@ function TheBody() {
               <span className='flex gap-x-2 px-3'>
               <img src={acc.src} className='w-[80px]   lg:w-[25%] h-auto px-1 md:px-0 '  alt=''  />
               <div className=' text-[#272828] '>
-                <p className='font-semibold  text-sm'>Vous n'avez pas de compte ?</p>
-                <p className=' w-full  font-normal md:px-0 lg:px-0    lg:w-[100%]   text-[11px] md:text-[15px] lg:text-[13px]'>Créez un compte pour ouvrir et gérer votre compte
-                    bancaire, facilement et en toute sécurité. Commandez
-                    votre carte, soumettez une demande de prêt et
-                    commandez nos produits numériques disponible sur
-                    notre portail.  </p>
-             
+                <p className='font-semibold  text-sm'>Vous n&apos;avez pas de compte ?</p>
+                <p className=' w-full  font-normal md:px-0 lg:px-0    lg:w-[100%]   text-[11px] md:text-[15px] lg:text-[13px]'>
+                  Vous pouvez soit :<br/>
+                  📄 <a href="/KYC_physique.pdf" className='underline text-[#a22a2b]' target='_blank' rel='noopener noreferrer'>Télécharger le formulaire KYC</a> — Le remplir et l&apos;envoyer à notre service Diaspora à l&apos;adresse suivante : <a href='mailto:diaspora@equitybcdc.cd' className='underline text-[#a22a2b]'>diaspora@equitybcdc.cd</a>.<br/><br/>
+                  Ou créer votre profil en ligne dès maintenant et accéder à nos services bancaires où que vous soyez, en toute sécurité. Ouvrez un compte, commandez votre carte et gérez vos demandes en ligne, en quelques clics.
+                </p>
               </div>
               </span>
               <a href="https://www.equitybcdc-diasporabanking.com/equity-bank-ui/register">
-             
               <div className='flex items-center mx-auto justify-center mt-0 py-2 px-10 md:px-10 lg:px-0 md:py-0 lg:py-0'>
              <button className='bg-[#a22a2b] hover:bg-[#d73611] w-full rounded-[5px] lg:w-[190px] h-[40px] text-[11px] font-bold text-white '>CREER VOTRE COMPTE</button>
-            
                 </div> </a>
               </div>
               <div className='border-[1px] items-center mx-auto py-4 w-full px-0  lg:w-full mt-3 md:mt-3 lg:mt-0  bg-[#fff]'>

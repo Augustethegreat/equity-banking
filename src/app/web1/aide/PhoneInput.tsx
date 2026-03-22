@@ -233,13 +233,13 @@ const countryCodes = [
     return (
       <div className="flex gap-2 ">
         <Select value={countryCode} onValueChange={handleCountryCodeChange} >
-          <SelectTrigger className="w-[110px] border-[#a22a2b] hover:border-[#a22a2b] border-[2px] rounded-[5px] py-5">
+          <SelectTrigger className="w-[110px] border-[#a22a2b] hover:border-[#a22a2b] border-[2px] rounded-[5px] py-5 border-none" >
             <SelectValue placeholder={countryCode} />
           </SelectTrigger>
           <SelectContent>
             {countryCodes.map((country) => (
               <SelectItem key={`${country.code}-${country.country}`} value={country.code}>
-                <span>{country.code}</span> <span className="text-xs py-5 text-muted-foreground ml-1">{country.country}</span>
+                <span>{country.code}</span> <span className="text-xs py-5 text-muted-foreground ml-1 border-none">{country.country}</span>
               </SelectItem>
             ))}
           </SelectContent>
